@@ -11,6 +11,8 @@ import Login from './pages/Login/Login'
 import SignUp from './pages/SignUp/SignUp'
 import Dashboard from './pages/Dashboard/Dashboard'
 import Wallet from './pages/Wallet/Wallet'
+import TabletScreen from './styles/tablet-res.css'
+import MobileScreen from './styles/mobile-res.css'
 
 /* Pages that use the public Header + Footer layout */
 const PUBLIC_ROUTES = ['/', '/about', '/how-it-works', '/traders', '/faq']
