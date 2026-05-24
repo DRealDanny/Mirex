@@ -1,0 +1,322 @@
+/* ─────────────────────────────────────────────────────────
+   MIREX — Global Stylesheet
+   ───────────────────────────────────────────────────────── */
+
+/* ── CSS Variables ───────────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --bg-primary:    #050505;
+  --bg-secondary:  #090909;
+  --bg-card:       #0e0e0e;
+  --bg-card-alt:   #111111;
+  --bg-input:      #0a0a0a;
+  --bg-sidebar:    #080808;
+
+  /* Green Palette */
+  --green:              #00ff94;
+  --green-dim:          rgba(0, 255, 148, 0.7);
+  --green-muted:        rgba(0, 255, 148, 0.4);
+  --green-glow:         rgba(0, 255, 148, 0.1);
+  --green-glow-strong:  rgba(0, 255, 148, 0.2);
+  --green-border:       rgba(0, 255, 148, 0.12);
+  --green-border-hover: rgba(0, 255, 148, 0.3);
+  --green-bg:           rgba(0, 255, 148, 0.06);
+  --green-bg-hover:     rgba(0, 255, 148, 0.1);
+
+  /* Text */
+  --text-primary:   #ffffff;
+  --text-secondary: #7a7a7a;
+  --text-muted:     #404040;
+  --text-green:     #00ff94;
+
+  /* Borders */
+  --border:         rgba(255, 255, 255, 0.05);
+  --border-subtle:  rgba(255, 255, 255, 0.03);
+
+  /* Typography */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body:    'Inter', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  /* Radius */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition:      0.2s ease;
+  --transition-slow: 0.35s ease;
+
+  /* Layout */
+  --container:     1200px;
+  --gutter:        24px;
+  --header-height: 72px;
+}
+
+/* ── Reset ───────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  outline: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--green-muted);
+}
+
+/* ── Container ───────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  transition: all var(--transition);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--green);
+  color: #000;
+  border: 1px solid transparent;
+}
+.btn-primary:hover {
+  background: #fff;
+  box-shadow: 0 0 28px var(--green-glow-strong);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+.btn-outline:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.btn-ghost {
+  background: var(--green-bg);
+  color: var(--green);
+  border: 1px solid var(--green-border);
+}
+.btn-ghost:hover {
+  background: var(--green-bg-hover);
+  border-color: var(--green-border-hover);
+}
+
+.btn-sm {
+  padding: 8px 18px;
+  font-size: 13px;
+}
+
+.btn-lg {
+  padding: 16px 36px;
+  font-size: 16px;
+}
+
+/* ── Cards ───────────────────────────────────────────────── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.card:hover {
+  border-color: var(--green-border);
+  box-shadow: 0 0 32px var(--green-glow);
+}
+
+/* ── Eyebrow ─────────────────────────────────────────────── */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: var(--green);
+  flex-shrink: 0;
+}
+
+/* ── Section Heading ─────────────────────────────────────── */
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.section-title .highlight {
+  color: var(--green);
+}
+
+.section-sub {
+  color: var(--text-secondary);
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+/* ── Badge / Tag ─────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 500;
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+}
+
+.badge-green {
+  background: var(--green-bg);
+  border: 1px solid var(--green-border);
+  color: var(--green);
+}
+.badge-yellow {
+  background: rgba(255, 200, 0, 0.06);
+  border: 1px solid rgba(255, 200, 0, 0.2);
+  color: #ffc800;
+}
+.badge-blue {
+  background: rgba(0, 180, 255, 0.06);
+  border: 1px solid rgba(0, 180, 255, 0.2);
+  color: #00b4ff;
+}
+.badge-orange {
+  background: rgba(255, 120, 0, 0.06);
+  border: 1px solid rgba(255, 120, 0, 0.2);
+  color: #ff7800;
+}
+
+/* ── Divider ─────────────────────────────────────────────── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  border: none;
+  margin: 0;
+}
+
+/* ── Mono numbers ────────────────────────────────────────── */
+.mono {
+  font-family: var(--font-mono);
+}
+
+.text-green  { color: var(--green); }
+.text-muted  { color: var(--text-secondary); }
+.text-center { text-align: center; }
+
+/* ── Section Spacing ─────────────────────────────────────── */
+.section {
+  padding: 100px 0;
+}
+.section-sm {
+  padding: 64px 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  :root {
+    --gutter: 20px;
+  }
+  .section {
+    padding: 80px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --gutter: 16px;
+  }
+  .section {
+    padding: 64px 0;
+  }
+  .section-sub {
+    font-size: 15px;
+  }
+}

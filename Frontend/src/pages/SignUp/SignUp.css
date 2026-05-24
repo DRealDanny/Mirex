@@ -1,0 +1,6 @@
+.signup-form-panel { padding-top: 32px; padding-bottom: 32px; }
+.signup-mockup-stat { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; }
+.signup-mockup-stat__label { font-size: 13px; color: var(--text-secondary); }
+.signup-mockup-stat__val { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+.signup-mockup-divider { height: 1px; background: var(--border); }
+.auth-field__select { appearance: none; cursor: pointer; }
