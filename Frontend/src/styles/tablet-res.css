@@ -1,240 +1,115 @@
 /* ═══════════════════════════════════════════════════════════
-   MIREX — Tablet Responsive Stylesheet
-   Applies to: max-width 1024px (tablets, small laptops)
+   MIREX — Tablet Responsive  |  max-width: 1024px
+   Import location: bottom of App.jsx (after all page imports)
    ═══════════════════════════════════════════════════════════ */
 
 @media (max-width: 1024px) {
 
-  /* ── Global ────────────────────────────────────────────── */
+  /* ── Root / Global ──────────────────────────────────────── */
   :root {
     --gutter: 20px;
-    --container: 100%;
   }
-
-  .section  { padding: 80px 0; }
+  .section   { padding: 80px 0; }
   .section-sm { padding: 52px 0; }
 
-  /* ── Header ────────────────────────────────────────────── */
-  .header__nav {
-    gap: 0;
-  }
-  .header__link {
-    padding: 8px 10px;
-    font-size: 13px;
-  }
-  .header__inner {
-    gap: 24px;
-  }
+  /* ── Header ─────────────────────────────────────────────── */
+  .header__inner { gap: 20px; }
+  .header__link  { padding: 8px 10px; font-size: 13px; }
 
-  /* ── Home Hero ─────────────────────────────────────────── */
+  /* ── Home · Hero ────────────────────────────────────────── */
   .home-hero__inner {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     text-align: center;
-    gap: 52px;
-    padding-top: 56px;
-    padding-bottom: 72px;
+    gap: 48px;
+    padding-top: 48px;
+    padding-bottom: 64px;
   }
   .home-hero__content {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .home-hero__sub {
-    max-width: 560px;
-  }
-  .home-hero__actions {
-    justify-content: center;
-  }
-  .home-hero__trust {
-    justify-content: center;
-  }
-  .home-hero__preview {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-  .mockup {
-    max-width: 500px;
-    width: 100%;
-  }
+  .home-hero__sub    { max-width: 560px; margin-left: auto; margin-right: auto; }
+  .home-hero__actions { justify-content: center; }
+  .home-hero__trust  { justify-content: center; }
+  .home-hero__preview { display: flex; justify-content: center; }
+  .mockup { max-width: 500px; width: 100%; }
 
-  /* ── Home Stats ────────────────────────────────────────── */
-  .home-stats__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .home-stats__item {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-  .home-stats__item:nth-child(odd) {
-    border-right: 1px solid var(--border);
-  }
-  .home-stats__item:nth-last-child(-n+2) {
-    border-bottom: none;
-  }
+  /* ── Home · Stats ────────────────────────────────────────── */
+  .home-stats__grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .home-stats__item { border-right: none !important; border-bottom: 1px solid var(--border); }
+  .home-stats__item:nth-child(odd)        { border-right: 1px solid var(--border) !important; }
+  .home-stats__item:nth-last-child(-n+2) { border-bottom: none !important; }
 
-  /* ── Home How It Works ─────────────────────────────────── */
-  .home-how__steps {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .home-step__arrow {
-    display: none;
-  }
-  .home-step {
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .home-step__icon-wrap {
-    margin: 0 0 16px;
-  }
+  /* ── Home · Steps ────────────────────────────────────────── */
+  .home-how__head { margin-bottom: 40px; }
+  .home-how__steps { grid-template-columns: 1fr !important; gap: 14px; }
+  .home-step__arrow { display: none !important; }
+  .home-step { text-align: left; align-items: flex-start; }
+  .home-step__icon-wrap { margin: 0 0 14px; }
 
-  /* ── Home Features ─────────────────────────────────────── */
-  .home-features__head {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    margin-bottom: 48px;
-  }
-  .home-features__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  /* ── Home · Features ─────────────────────────────────────── */
+  .home-features__head { grid-template-columns: 1fr !important; gap: 20px; margin-bottom: 40px; }
+  .home-features__grid { grid-template-columns: repeat(2, 1fr) !important; }
 
-  /* ── Home Traders Preview ──────────────────────────────── */
-  .home-traders-preview__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .home-traders-preview__head {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
+  /* ── Home · Traders Preview ──────────────────────────────── */
+  .home-traders-preview__grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .home-traders-preview__head { flex-direction: column; align-items: flex-start; gap: 16px; }
 
-  /* ── Home Trust Strip ──────────────────────────────────── */
-  .home-trust__items {
-    gap: 20px;
-  }
-
-  /* ── About Hero ────────────────────────────────────────── */
+  /* ── About · Hero ────────────────────────────────────────── */
   .about-hero__stats {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
     width: 100%;
   }
-  .about-hero__stat {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-  .about-hero__stat:nth-child(odd) {
-    border-right: 1px solid var(--border);
-  }
-  .about-hero__stat:nth-last-child(-n+2) {
-    border-bottom: none;
-  }
+  .about-hero__stat { border-right: none !important; border-bottom: 1px solid var(--border); }
+  .about-hero__stat:nth-child(odd)        { border-right: 1px solid var(--border) !important; }
+  .about-hero__stat:nth-last-child(-n+2) { border-bottom: none !important; }
 
-  /* ── About Story ───────────────────────────────────────── */
-  .about-story__inner {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
+  /* ── About · Story ───────────────────────────────────────── */
+  .about-story__inner { grid-template-columns: 1fr !important; gap: 48px; }
 
-  /* ── About Values ──────────────────────────────────────── */
-  .about-values__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  /* ── About · Values ──────────────────────────────────────── */
+  .about-values__grid { grid-template-columns: repeat(2, 1fr) !important; }
 
-  /* ── About Why ─────────────────────────────────────────── */
-  .about-why__grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
+  /* ── About · Why ─────────────────────────────────────────── */
+  .about-why__grid { grid-template-columns: 1fr !important; gap: 14px; }
 
-  /* ── How It Works ──────────────────────────────────────── */
-  .hiw-profit__inner {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-  .hiw-steps__list {
-    max-width: 100%;
-  }
+  /* ── HowItWorks ──────────────────────────────────────────── */
+  .hiw-profit__inner { grid-template-columns: 1fr !important; gap: 40px; }
+  .hiw-steps__list   { max-width: 100%; }
 
-  /* ── Traders Page ──────────────────────────────────────── */
-  .traders-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .traders-filters__inner {
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-  .traders-filters__sort {
-    margin-left: 0;
-    width: 100%;
-    justify-content: flex-start;
-  }
-  .traders-become__inner {
-    flex-wrap: wrap;
-    gap: 20px;
-  }
+  /* ── Traders ─────────────────────────────────────────────── */
+  .traders-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .traders-filters__inner { flex-wrap: wrap; gap: 14px; }
+  .traders-filters__sort  { margin-left: 0; width: 100%; justify-content: flex-start; }
+  .traders-become__inner  { flex-wrap: wrap; gap: 16px; }
 
-  /* ── FAQ Page ──────────────────────────────────────────── */
-  .faq-body__inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .faq-sidebar {
-    position: static;
-    flex-direction: row;
-    gap: 16px;
-  }
-  .faq-sidebar__card {
-    flex: 1;
-  }
+  /* ── FAQ ─────────────────────────────────────────────────── */
+  .faq-body__inner { grid-template-columns: 1fr !important; gap: 36px; }
+  .faq-sidebar { position: static; flex-direction: row; gap: 14px; }
+  .faq-sidebar__card { flex: 1; }
 
-  /* ── Auth Pages ────────────────────────────────────────── */
-  .auth-panel--brand {
-    display: none;
-  }
-  .auth-panel--form {
-    width: 100%;
-    min-height: 100vh;
-  }
+  /* ── Auth ────────────────────────────────────────────────── */
+  .auth-panel--brand { display: none !important; }
+  .auth-panel--form  { width: 100% !important; min-height: 100vh; }
 
-  /* ── Dashboard Layout ──────────────────────────────────── */
-  .dash-sidebar {
-    width: 220px;
-  }
-  .dash-main {
-    margin-left: 220px;
-  }
-  .dash-content {
-    padding: 24px 20px;
-  }
+  /* ── Dashboard ───────────────────────────────────────────── */
+  .dash-sidebar  { width: 220px; }
+  .dash-main     { margin-left: 220px; }
+  .dash-content  { padding: 22px 18px; }
+  .dash-kpis     { grid-template-columns: repeat(3, 1fr) !important; }
+  .dash-bottom   { grid-template-columns: 1fr !important; }
+  .dash-quick__items { display: grid; grid-template-columns: repeat(2, 1fr); }
 
-  /* ── Dashboard KPIs ────────────────────────────────────── */
-  .dash-kpis {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  /* ── Dashboard Bottom ──────────────────────────────────── */
-  .dash-bottom {
-    grid-template-columns: 1fr;
-  }
-  .dash-quick__items {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* ── Wallet Page ───────────────────────────────────────── */
-  .wallet-main {
-    grid-template-columns: 1fr;
-  }
+  /* ── Wallet ──────────────────────────────────────────────── */
+  .wallet-main { grid-template-columns: 1fr !important; }
   .wallet-balance-card {
-    flex-direction: column;
+    flex-direction: column !important;
     align-items: flex-start;
-    gap: 28px;
+    gap: 24px;
   }
   .wallet-balance-card__actions {
-    flex-direction: row;
+    flex-direction: row !important;
     width: 100%;
   }
   .wallet-balance-card__actions .btn {
@@ -242,35 +117,27 @@
     justify-content: center;
   }
 
-  /* ── Footer ────────────────────────────────────────────── */
-  .footer-main__inner {
-    grid-template-columns: 1fr 1fr;
-    gap: 36px 48px;
-  }
-  .footer-brand {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: start;
-    gap: 0 48px;
-  }
-  .footer-brand__tagline {
-    margin-bottom: 0;
-  }
+  /* ── Footer ──────────────────────────────────────────────── */
   .footer-cta__inner {
     flex-direction: column;
     align-items: flex-start;
-    gap: 36px;
+    gap: 28px;
   }
   .footer-cta__actions {
     flex-direction: row;
     width: 100%;
     min-width: unset;
   }
-  .footer-cta__actions .btn {
-    flex: 1;
-    justify-content: center;
+  .footer-cta__actions .btn { flex: 1; justify-content: center; }
+  .footer-main__inner { grid-template-columns: 1fr 1fr !important; gap: 32px 40px; }
+  .footer-brand {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 0 40px;
   }
+  .footer-brand__tagline { margin-bottom: 0; }
 
 }
-/* ── end @media 1024px ─────────────────────────────────── */
+/* end 1024px */
