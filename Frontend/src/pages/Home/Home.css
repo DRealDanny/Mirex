@@ -2,6 +2,7 @@
 .home-hero {
   position: relative;
   min-height: 100vh;
+  width: 100%;
   display: flex;
   align-items: center;
   padding-top: var(--header-height);
@@ -65,6 +66,7 @@
   letter-spacing: -0.025em;
   color: var(--text-primary);
   margin-bottom: 20px;
+  word-wrap: break-word;
 }
 
 .home-hero__title .highlight { color: var(--green); }
@@ -75,14 +77,20 @@
   line-height: 1.75;
   margin-bottom: 36px;
   max-width: 480px;
+  word-wrap: break-word;
 }
 
 .home-hero__actions {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
+  gap: 1rem;
   margin-bottom: 28px;
+}
+
+.home-hero__actions .btn {
+  width: auto;
+  max-width: 100%;
 }
 
 .home-hero__trust {
@@ -101,7 +109,7 @@
 /* ── Dashboard Mockup ────────────────────────────────────── */
 .mockup {
   width: 100%;
-  max-width: 540px;
+  max-width: 100%;
   background: var(--bg-card);
   border: 1px solid var(--green-border);
   border-radius: var(--radius-xl);
@@ -742,8 +750,13 @@
   .home-hero__sub { max-width: 100%; margin-left: auto; margin-right: auto; }
   .home-hero__actions { justify-content: center; }
   .home-hero__trust { justify-content: center; }
-  .home-hero__preview { display: flex; justify-content: center; }
-  .mockup { max-width: 480px; }
+  .home-hero__preview {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+  }
+  .mockup { max-width: 100%; }
   .home-stats__grid { grid-template-columns: repeat(2, 1fr); }
   .home-stats__item { border-right: none; border-bottom: 1px solid var(--border); }
   .home-stats__item:nth-child(2n) { border-bottom: 1px solid var(--border); }
@@ -762,7 +775,7 @@
   .home-features__grid { grid-template-columns: 1fr; }
   .home-traders-preview__grid { grid-template-columns: 1fr; }
   .home-trust__items { gap: 16px; }
-  .mockup { max-width: 340px; }
+  .mockup { max-width: 100%; }
   .mockup__balance { font-size: 16px; }
 }
 
